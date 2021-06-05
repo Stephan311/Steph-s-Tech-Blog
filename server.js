@@ -1,16 +1,20 @@
 const express = require('express');
 const sequelize = require('./config/connection');
-// const routes = require('./routes');
+const exphbs = require('express-handlebars')
+const hbs = exphbs.create({});
+const path = require('path')
+// const routes = require('./api');
 // import sequelize connection
 
-const Product = require('./models/Product');
-const Profits = require('./models/Profits');
 
 const app = express();
 const PORT = process.env.PORT || 3005;
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+//create handlebars
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(require('./controller/blog-routes'));
 
 // app.use(routes);
 
