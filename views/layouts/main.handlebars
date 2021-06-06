@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Members Store</title>
+  <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/css/jass.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <style>
+    #cartcnt{
+    font-size: 14px;
+    font-weight: 900;
+    position: absolute;
+    border: solid rgb(255, 6, 6);
+    border-radius: 60%;
+    height: 14px;
+    width: 8px;
+    background:red;
+}
+
+  </style>
+</head>
+
+<body >
+  
+  <header>
+    <h1>Welcome to the store</h1>
+  </header>
+  <nav>
+    <a href="/">Home</a>
+    {{#if loggedIn}}
+    <button style="margin-top: 28px; margin-right: 10px; " id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <a href="/login">Login</a> 
+    <a href="/owner/login">Owner Login</a> 
+  
+    {{/if}}
+  {{#if loggedIn}}
+   {{#if isOwner}}
+    <a href="./add" class="button">Add New Product</a>
+    <a href="./productstats" class="button">Products</a>
+    <a href="./dashboard" class="button">Profit Dashboard</a>
+    <a href="./userlist" class="button">Users</a>
+     {{/if}}
+    {{/if}}
+  {{#if isOwner}}
+    <button style="margin-top: 28px; margin-right: 10px; " class="btn-no-style">Owner Login</button>
+    {{/if}}
+
+
+
+    <a href="/cart/list" class="right-align" style="float:inline-end">
+    <i class="material-icons left " style="margin-right:0px;">shopping_cart</i>
+    {{#if cartCnt}}
+    <span id="cartcnt">{{cartCnt}}</span>
+    {{/if}}
+    </a>
+  </nav>
+  <main>
+    {{!-- <aside>
+      <h2>Checked items</h2>
+      
+    </aside> --}}
+    <div class="gallery">
+      {{{body}}}
+    </div>
+  </main>
+  {{#if loggedIn}}
+  
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
