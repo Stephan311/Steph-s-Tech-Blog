@@ -1,11 +1,12 @@
 const router = require('express').Router();
 
-const apiRoutes = require('./api');
+// const apiRoutes = require('./api');
 const blogRoutes = require('./blog-routes');
 // const businessOwnerRoutes = require('./admin-routes');
 // const productRoutes = require('./product-routes');
 
-// //router.use('/login', homeRoutes);
+router.use('/blog', blogRoutes);
+// router.use('/api', apiRoutes);
 
 module.exports = router;
 ////add Date to profit table
