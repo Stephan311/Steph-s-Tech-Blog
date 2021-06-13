@@ -8,20 +8,19 @@ const {Blog} = require('../models');
 
 
 router.get('/', async(req, res) => {
+  console.log('hello')
   try {
-    const dbBlogData = await Blog.findAll({
-    
-    });
+    const dbBlogData = await Blog.findAll();
       
-    const blogs = dbBlogData.map((Blog) =>
-    Blog.get({plain: true})
+    const blogs = dbBlogData.map((blog) =>
+     blog.get({plain: true})
     );
 
     console.log(blogs);
-    // res.render('dashboard', {
-    //   blogs,
-    //   loggedIn: req.session.loggedIn,
-    // });
+    res.render('blog', {
+      blogs,
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
     console.log(err) 
       res.status(500).json(err)
