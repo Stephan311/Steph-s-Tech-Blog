@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Owner } = require('../../models');
 
 // CREATE new user
 router.post('/', async (req, res) => {
   try {
-    const dbOwnerData = await User.create({
+    const dbOwnerData = await Owner.create({
       username: req.body.username,
       email: req.body.email,
       busname: req.body.busname,
