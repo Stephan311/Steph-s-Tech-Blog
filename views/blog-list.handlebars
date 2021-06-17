@@ -1,0 +1,23 @@
+
+<main>
+    <div class="featureditems"> <!--style="overflow-y:scroll"-->
+        {{#each blogs as | blog|}}
+        <div style="float: left; width: 100%;">
+            <div height="100px" class="card row">
+                <div class="card-content" style="width:100%">
+                    <div class="card-title activator grey-text text-darken-4">{{blog.title}}</div>
+                    <div class="right-align" style="valign:top;" >
+                        <span class="card-title grey-text text-darken-4 right-align"> Author: {{blog.author}}</span>
+                        <span class="card-title grey-text text-darken-4 right-align"> {{blog.body}}</span>
+
+                    </div>
+                    <div class="right-align" style="float: inline-end;">
+                    {{!-- <input type="button" value="Add to Cart" onClick="AddToCart(event,'{{product.id}}');"> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</main>
+<script src="/js/cart.js"></script>

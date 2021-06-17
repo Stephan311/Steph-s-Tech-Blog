@@ -1,0 +1,22 @@
+<main>
+    <div class="featureditems">
+        <div style="font-size: 50px; color: white">Total users: </div>
+        <!--style="overflow-y:scroll"-->
+        {{#each users as |user|}}
+        <div style="float: left; width: 100%;">
+            <div height="50px" class="card row">
+                <div class="card-content" style="width:100%">
+                    <div class="card-title activator grey-text text-darken-4"> Username: {{user.username}}</div>
+                    <div class="card-title activator grey-text text-darken-4"> Email: {{user.email}}</div>
+                    
+                    <div class="right-align" style="valign:top;">
+                    </div>
+                    <div class="right-align" style="float: inline-end;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</main>
+<script src="./js/cart.js"></script>
