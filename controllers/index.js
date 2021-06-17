@@ -1,13 +1,14 @@
 const router = require('express').Router();
 
-// const apiRoutes = require('./api');
+const apiRoutes = require('./api');
+const blogOwnerRoutes = require('./blogsss-routes');
 const blogRoutes = require('./blog-routes');
-// const businessOwnerRoutes = require('./admin-routes');
-// const productRoutes = require('./product-routes');
+const userlistroutes = require('./userlist-routes');
 
-router.use('/blog', blogRoutes);
-// router.use('/api', apiRoutes);
+
+router.use('/', blogRoutes);
+router.use('/api', apiRoutes);
+router.use('/blog',blogOwnerRoutes)
+router.use('/userlist', userlistroutes);
 
 module.exports = router;
-////add Date to profit table
-///make a new table with product_id, id, profit_id, price, quantity, date.
