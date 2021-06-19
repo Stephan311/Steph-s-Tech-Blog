@@ -30,7 +30,7 @@
 <body >
   
   <header>
-    <h1>Welcome to the store</h1>
+    <h1>Welcome to our blog</h1>
   </header>
   <nav>
     <a href="/">Home</a>
@@ -42,16 +42,16 @@
   
     {{/if}}
   {{#if loggedIn}}
-   {{#if isOwner}}
+   {{!-- {{#if isOwner}} --}}
     <a href="./add" class="button">Add New Product</a>
     <a href="./productstats" class="button">Products</a>
     <a href="./dashboard" class="button">Profit Dashboard</a>
     <a href="./userlist" class="button">Users</a>
      {{/if}}
-    {{/if}}
-  {{#if isOwner}}
+    {{!-- {{/if}} --}}
+  {{!-- {{#if isOwner}} --}}
     <button style="margin-top: 28px; margin-right: 10px; " class="btn-no-style">Owner Login</button>
-    {{/if}}
+    {{!-- {{/if}} --}}
 
 
 
