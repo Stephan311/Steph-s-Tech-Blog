@@ -1,12 +1,12 @@
 <main style="color: white">
 <div class="row">
-    <form id="product-form" class="col s12">
+    <form id="blog-form" class="col s12">
       <div class="row">
         <div class="input-field col s12" >
-          <input id="product_id" type="hidden" value="{{product.id}}" class="validate">
+          <input id="blog_id" type="hidden" value="{{product.id}}" class="validate">
           <div style = "margin-left: 40px" >Blog Title::</div>
           <div style="background-color: aliceblue; margin-left: 40px; border-radius: 20px; padding-left: 10px" class="input-field right-align">
-            <textarea  style = "margin-left: 0px; backround-color: aliceblue; border-radius: 20px" placeholder="Product name" id="product_name" cols="80" class="validate">{{blog.title}}</textarea>
+            <textarea  style = "margin-left: 0px; backround-color: aliceblue; border-radius: 20px" placeholder="Product name" id="title" cols="80" class="validate">{{blog.title}}</textarea>
           </div>
 
         </div>
@@ -15,7 +15,7 @@
         <div class="col s12" style = "margin-left: 40px">
          Body: 
           <div style="background-color: aliceblue; border-radius: 20px; padding-left: 10px" class="input-field inline">
-            <input id="price" type="text" value="{{blog.body}}" class="validate square-box align-right">
+            <input id="body" type="text" value="{{blog.body}}" class="validate square-box align-right">
           </div>
           </div>
       </div>
@@ -23,7 +23,7 @@
         <div class="col s12" style = "margin-left: 40px">
           Author:
           <div  style="background-color: aliceblue; border-radius: 20px; padding-left: 10px" class="input-field inline">
-            <input id="stock" type="text" value="{{blog.author}}" class="validate square-box align-right">
+            <input id="author" type="text" value="{{blog.author}}" class="validate square-box align-right">
           </div>
           </div>
       </div>
@@ -49,4 +49,4 @@
     </form>
   </div>
   </main>
-  <script src="/js/product.js"></script>
+  <script src="/js/blog.js"></script>
