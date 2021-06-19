@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Members Store</title>
+  <title>Steph's Blog</title>
   <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!-- Compiled and minified CSS -->
@@ -38,29 +38,18 @@
     <button style="margin-top: 28px; margin-right: 10px; " id="logout" class="btn-no-style">Logout</button>
     {{else}}
     <a href="/login">Login</a> 
-    <a href="/owner/login">Owner Login</a> 
   
     {{/if}}
   {{#if loggedIn}}
    {{!-- {{#if isOwner}} --}}
-    <a href="./add" class="button">Add New Product</a>
-    <a href="./productstats" class="button">Products</a>
-    <a href="./dashboard" class="button">Profit Dashboard</a>
+    <a href="./add" class="button">Add a Blog Post</a>
     <a href="./userlist" class="button">Users</a>
      {{/if}}
-    {{!-- {{/if}} --}}
-  {{!-- {{#if isOwner}} --}}
     <button style="margin-top: 28px; margin-right: 10px; " class="btn-no-style">Owner Login</button>
-    {{!-- {{/if}} --}}
 
 
 
-    <a href="/cart/list" class="right-align" style="float:inline-end">
-    <i class="material-icons left " style="margin-right:0px;">shopping_cart</i>
-    {{#if cartCnt}}
-    <span id="cartcnt">{{cartCnt}}</span>
-    {{/if}}
-    </a>
+
   </nav>
   <main>
     {{!-- <aside>
