@@ -112,6 +112,59 @@ router.get('/add', (req, res) => {
   //}
   res.render('addblog',{loggedIn: req.session.loggedIn });
 });
+
+router.get('/blogstats', async(req, res) => {
+  try {
+    const dbBlogData = await Blog.findAll({
+    });
+
+    const blog = dbBlogData.map((Blog) =>
+    Blog.get({plain: true})
+    );
+
+    console.log(blog);
+    res.render('blogstats', {
+      blog,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err) 
+      res.status(500).json(err)
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  try {
+    const dbProductData = await Blog.findByPk(req.params.id);
+    const blog = dbBlogData.get({ plain: true });
+    res.render('blog', { blog, loggedIn: req.session.loggedIn});
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// update product
+router.put('/:id', async(req, res) => {
+  // update a product by its `id` value
+  try {
+    const BlogData = await Blog.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!BlogData[0]) {
+      res.status(404).json({ message: 'No blog with this id!' });
+      return;
+    }
+    //res.redirect('/products'); to redirect to prodcut listing page
+      //return;
+    res.status(200).json(BlogData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
   
 
 module.exports = router;

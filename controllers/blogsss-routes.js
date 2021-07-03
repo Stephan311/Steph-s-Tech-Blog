@@ -122,5 +122,25 @@ router.post('/', async (req, res) => {
     }
   });
   
+  router.get('/blogstats', async(req, res) => {
+    try {
+      const dbBlogData = await Blog.findAll({
+      });
+  
+      const blog = dbBlogData.map((Blog) =>
+      Blog.get({plain: true})
+      );
+  
+      console.log(blog);
+      res.render('blogstats', {
+        blog,
+        loggedIn: req.session.loggedIn,
+      });
+    } catch (err) {
+      console.log(err) 
+        res.status(500).json(err)
+    }
+  });
+  
 
 module.exports = router;

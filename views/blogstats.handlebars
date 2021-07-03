@@ -1,0 +1,19 @@
+
+<main>
+    <div class="featureditems">
+            <div style="font-size: 50px; color: white">Total Products: </div> <!--style="overflow-y:scroll"-->
+        {{#each blog as |blog|}}
+        <div style="float: left; width: 100%;">
+            <div height="50px" class="card row">
+                <div class="card-content" style="width:100%">
+                    <div class="card-title activator grey-text text-darken-4"> Title: {{blog.title}}</div>
+                    <div class="card-title activator grey-text text-darken-4"> Body:{{blog.body}}</div>
+                    <div class="right-align" style="valign:top;" >
+                    </div>
+                    <div class="right-align" style="float: inline-end;">
+                        <input type="button" value="Modify" onClick="document.location.replace('/{{product.id}}')">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
