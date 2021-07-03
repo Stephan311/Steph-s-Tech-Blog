@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
-
+//adding heroku config
 let sequelize;
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
