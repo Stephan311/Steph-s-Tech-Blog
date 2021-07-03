@@ -38,48 +38,15 @@ router.get('/login', (req, res) => {
   }
   res.render('addblog');
 });
-// Add product route
+
 router.get('/add', (req, res) => {
-  //if (req.session.loggedIn) {
-    // res.redirect('/');
-   // return;
-  //}
+
   res.render('addblog',{loggedIn: req.session.loggedIn,
     
    });
   
 });
 
-// GET one Product
-router.get('/:id', async (req, res) => {
-  if(req.params.id==="add"){
-    res.render('addblog');
-    return;
-  }
-  try {
-    const dbProductData = await Product.findByPk(req.params.id, {
-     /* include: [
-        {
-          model: Painting,
-          attributes: [
-            'id',
-            'title',
-            'artist',
-            'exhibition_date',
-            'filename',
-            'description',
-          ],
-        },
-      ],*/
-    });
-
-    const product = dbProductData.get({ plain: true });
-    res.render('addblog', { product, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
 
 // CREATE new Blog
 router.post('/', async (req, res) => {
@@ -144,7 +111,7 @@ router.post('/', async (req, res) => {
 
   router.get('/:id', async (req, res) => {
     try {
-      const dbProductData = await Blog.findByPk(req.params.id);
+      const dbBlogData = await Blog.findByPk(req.params.id);
       const blog = dbBlogData.get({ plain: true });
       res.render('blog', { blog, loggedIn: req.session.loggedIn});
     } catch (err) {
@@ -152,10 +119,9 @@ router.post('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
-  
-  // update product
+
   router.put('/:id', async(req, res) => {
-    // update a product by its `id` value
+ 
     try {
       const BlogData = await Blog.update(req.body, {
         where: {
@@ -166,8 +132,7 @@ router.post('/', async (req, res) => {
         res.status(404).json({ message: 'No blog with this id!' });
         return;
       }
-      //res.redirect('/products'); to redirect to prodcut listing page
-        //return;
+     
       res.status(200).json(BlogData);
     } catch (err) {
       res.status(500).json(err);
@@ -187,8 +152,7 @@ router.post('/', async (req, res) => {
         res.status(404).json({ message: 'No Blog found with this id!' });
         return;
       }
-      //res.redirect('/products'); to redirect to prodcut listing page
-        //return;
+
   
       res.status(200).json(BlogData);
     } catch (err) {

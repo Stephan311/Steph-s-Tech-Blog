@@ -10,7 +10,7 @@ const blogUpdate = async (event) => {
     if(id === ""){
 
           if (title && author && body) {
-             // const response = await fetch('/products/', {
+             
               const response = await fetch('/', {
                   method: 'POST',
                   body: JSON.stringify({ title, author, body }),
@@ -18,15 +18,15 @@ const blogUpdate = async (event) => {
               });
   
               if (response.ok) {
-              //document.location.replace('/products');
+             
               document.location.replace('/');
               } else {
-              alert('Failed to add product.');
+              alert('Failed to add Blog.');
               }
           }
     }else{
       if (id && title && author && body) {
-         // const response = await fetch('/products/'+id, {
+         
           const response = await fetch('/'+id, {
               method: 'PUT',
               body: JSON.stringify({title, author, body}),
@@ -34,10 +34,10 @@ const blogUpdate = async (event) => {
           });
   
           if (response.ok) {
-          //document.location.replace('/products');
+         
           document.location.replace('/');
           } else {
-          alert('Failed to update product.');
+          alert('Failed to update Blog.');
           }
       }
     }
