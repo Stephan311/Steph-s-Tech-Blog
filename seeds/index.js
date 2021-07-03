@@ -5,11 +5,11 @@ const seedUsers = require('./user-seeds')
 const seedAll = async () => {
     await sequelize.sync({force: true});
 
-    await seedBlog();
-    console.log('\n----- BLOGS SEEDED -----\n');
-
     await seedUsers();
     console.log('\n----- USERS SEEDED -----\n');
+
+    await seedBlog();
+    console.log('\n----- BLOGS SEEDED -----\n');
 
     
 

@@ -1,14 +1,17 @@
 const User = require('./User');
 const Blog = require('./Blog');
 
-//say what belongs to what here (18:31)
-// Profit.belongsTo(Product, {
-//     foreignKey: 'product_id',
-// })
+Blog.belongsTo(User, {
+    foreignKey: 'uid',
+})
 
-// Product.hasOne(Profit, {
-//     foreignKey: 'product_id',
-// })
+User.hasMany(Blog)
+    // foreignKey: {
+    //   name: 'blog_id',
+    // //   allowNull: false
+//     }
+//   })
+
 
 
 

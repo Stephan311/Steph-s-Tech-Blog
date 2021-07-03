@@ -4,7 +4,7 @@ const blogData = [
   {
     title: 'Awesome Blog',
     body: 'This is an awesome blog',
-    author: 'Steph'
+    uid: 1
   }
 ];
 

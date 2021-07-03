@@ -6,6 +6,14 @@ const { Blog} = require('../models')
 // GET all productss for productpage
 
 router.get('/', async (req, res) => {
+  console.log(User)
+
+   const usa = await User.findAll(
+   )
+   console.log(usa)
+
+
+
   try {
     const dbBlogData = await Blog.findAll({
       /*include: [

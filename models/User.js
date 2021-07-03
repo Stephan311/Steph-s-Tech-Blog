@@ -34,6 +34,10 @@ User.init(
       validate: {
         len: [6],
       },
+      // blog_id: {
+      //   type: DataTypes.INTEGER,
+      //   // allowNull: false
+      // }
     },
   },
   {
