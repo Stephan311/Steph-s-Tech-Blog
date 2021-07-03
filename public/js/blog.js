@@ -61,13 +61,13 @@ const blogUpdate = async (event) => {
           if (response.ok) {
           document.location.replace('/');    
           } else {
-          alert('Failed to delete product.');
+          alert('Failed to delete blog.');
           }
       }
       
     };
   if(document.querySelector('#cust_delete')){
-      document.querySelector('#cust_delete').addEventListener('click', productDelete);
+      document.querySelector('#cust_delete').addEventListener('click', blogDelete);
   }
   document
     .querySelector('#blog-form')
