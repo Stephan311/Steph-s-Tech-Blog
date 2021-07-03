@@ -2,14 +2,13 @@ const blogUpdate = async (event) => {
     event.preventDefault();
     let id = "";
     const title = document.querySelector('#title').value.trim();
-    const author = document.querySelector('#author').value.trim();
     const body = document.querySelector('#body').value.trim();
     if(document.querySelector('#blog_id') && document.querySelector('#blog_id').value !== ""){
       id = document.querySelector('#blog_id').value.trim();
     }
     if(id === ""){
 
-          if (title && author && body) {
+          if (title && body) {
              
               const response = await fetch('/', {
                   method: 'POST',
@@ -25,11 +24,11 @@ const blogUpdate = async (event) => {
               }
           }
     }else{
-      if (id && title && author && body) {
+      if (id && title && body) {
          
           const response = await fetch('/'+id, {
               method: 'PUT',
-              body: JSON.stringify({title, author, body}),
+              body: JSON.stringify({title, body}),
               headers: { 'Content-Type': 'application/json' },
           });
   
